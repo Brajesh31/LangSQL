@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 210 40% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 210 40% 98%;
+    --border: 240 10% 12%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 0 0% 0%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white dark:bg-[#0A0A0B] text-gray-900 dark:text-white transition-colors;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-[#111113];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+
+  /* Monaco Editor styles */
+  .monaco-editor {
+    @apply rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800;
+  }
+
+  .monaco-editor .margin {
+    @apply bg-gray-50 dark:bg-[#0A0A0B];
+  }
+
+  .monaco-editor .current-line {
+    @apply bg-gray-100 dark:bg-[#111113];
+  }
+
+  /* Code block styles */
+  pre {
+    @apply bg-gray-50 dark:bg-[#111113] rounded-lg p-4 overflow-x-auto border border-gray-200 dark:border-gray-800;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+
+  /* Link styles */
+  a {
+    @apply text-blue-500 dark:text-[#00E5FF] hover:text-blue-600 dark:hover:text-[#00E5FF]/80 transition-colors;
+  }
+
+  /* Button styles */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 dark:bg-[#00E5FF] text-white dark:text-black hover:bg-blue-600 dark:hover:bg-[#00E5FF]/90;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 dark:bg-[#111113] text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800;
+  }
+
+  /* Input styles */
+  input, textarea, select {
+    @apply w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0A0A0B] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-[#00E5FF] focus:border-transparent;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white dark:bg-[#111113] rounded-lg border border-gray-200 dark:border-gray-800 p-6;
+  }
+
+  /* Table styles */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  th {
+    @apply px-4 py-2 text-left font-medium text-gray-900 dark:text-white bg-gray-50 dark:bg-[#111113] border-b border-gray-200 dark:border-gray-800;
+  }
+
+  td {
+    @apply px-4 py-2 border-t border-gray-200 dark:border-gray-800;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-blue-100 dark:bg-[#00E5FF]/10 text-blue-600 dark:text-[#00E5FF];
+  }
+
+  .badge-secondary {
+    @apply bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white;
+  }
+}
